@@ -9,11 +9,16 @@
     "format": "standard | snazzy"
   },
   "dependencies": {
+    "@shoutem/ui": "^0.9.1",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.8",
+    "json-loader": "^0.5.4",
     "react": "15.3.2",
     "react-native": "0.38.0",
-    "react-native-web": "^0.0.55"
+    "react-native-router-flux": "^3.37.0",
+    "react-native-web": "^0.0.55",
+    "react-redux": "^4.4.6",
+    "redux": "^3.6.0"
   },
   "devDependencies": {
     "babel-jest": "17.0.2",

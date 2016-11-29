@@ -1,21 +1,25 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React, { Component } from 'react'
+import { Router, Actions, Scene } from 'react-native-router-flux'
+import { connect, Provider } from 'react-redux'
+import { createStore } from 'redux'
+import TestView from './TestView.js'
 
-var childStyle = { width: '50%', backgroundColor: '#0060aa', textAlign: 'center' }
+const ReduxRouter = connect()(Router)
+import reducer from './rootReducer'
 
-export default function () {
-  return <View style={{
-    backgroundColor: '#ddd',
-    flex: 1,
-    alignItems: 'center',
-    flexDirection: 'column',
-    justifyContent: 'space-between'
-  }}>
-    <Text style={childStyle} >Index!</Text>
-    <Text style={childStyle} >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Mauris sagittis pellentesque lacus eleifend lacinia...
-    </Text>
-    <Text style={childStyle} >My Action</Text>
-  </View>
+const scenes = Actions.create(
+  <Scene key='root'>
+    <Scene key='login' initial component={TestView} title='Login' />
+    <Scene key='examples' component={TestView} title='Examples' />
+  </Scene>
+)
+
+const store = createStore(reducer)
+
+export default class App extends Component {
+  render () {
+    return <Provider store={store}>
+      <ReduxRouter scenes={scenes} />
+    </Provider>
+  }
 }
