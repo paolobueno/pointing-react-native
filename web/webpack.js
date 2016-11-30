@@ -9,6 +9,8 @@ const config = {
     path: __dirname,
     filename: 'bundle.js'
   },
+  debug: true,
+  devtool: 'inline-source-map',
   module: {
     loaders: [{
       test: /\.js$/,
