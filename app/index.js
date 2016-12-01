@@ -1,10 +1,11 @@
 import React from 'react'
 import { createStore, combineReducers } from 'redux'
 import { Provider, connect } from 'react-redux'
-import { Router, Route, createMemoryHistory } from 'react-router'
-import { syncHistoryWithStore, routerReducer, syncHistoryWithStore } from 'react-router-redux'
+import { Router, Route, createMemoryHistory, IndexRoute } from 'react-router'
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 
-import TestView from './TestView'
+import Login from './Login'
+import Rooms from './Rooms'
 
 const store = createStore(
   combineReducers({
@@ -12,12 +13,12 @@ const store = createStore(
   })
 )
 const history = syncHistoryWithStore(createMemoryHistory(), store)
-
 export default function App () {
   return (
     <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={TestView} />
+      <Route path="/" component={Login} />
+      <Route path="/rooms" component={Rooms} />
     </Router>
     </Provider>
   )
