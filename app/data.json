@@ -1,0 +1,30 @@
+[
+  {
+    "Name": "Session to play",
+    "CreatedBy": {
+      "Name": "Passos"
+    },
+    "Users": [
+      {
+        "Name": "Erik"
+      },
+      {
+        "Name": "Corinne"
+      }
+    ]
+  },
+  {
+    "Name": "Cool",
+    "CreatedBy": {
+      "Name": "Erik"
+    },
+    "Users": [
+      {
+        "Name": "Julio"
+      },
+      {
+        "Name": "Passos"
+      }
+    ]
+  }
+]

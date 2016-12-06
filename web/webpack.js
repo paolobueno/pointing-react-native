@@ -21,6 +21,10 @@ const config = {
       test: /\.(gif|jpe?g|png|svg)$/,
       loader: 'url-loader',
       query: { name: '[name].[hash:16].[ext]' }
+    }, {
+      test: /\.json$/,
+      exclude: /node_modules/,
+      loader: 'json-loader'
     }]
   },
   plugins: [

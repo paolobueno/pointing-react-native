@@ -1,8 +1,15 @@
 import React from 'react'
-import { View, Text, Image, TextInput } from 'react-native'
+import { View, Text } from 'react-native'
+
+const testData = require('./data.json')
 
 export default function Rooms () {
+  var rooms = testData.map(r => (<View key={r.Name}>
+    <Text>{r.Name}</Text>
+    <Text>{r.CreatedBy.Name}</Text>
+  </View>))
+
   return <View>
-    This is the room list
+    {rooms}
   </View>
 }
